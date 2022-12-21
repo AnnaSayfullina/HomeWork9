@@ -3,6 +3,7 @@ public class Main {
         task1();
         task2();
         task3();
+        task4();
     }
     public static int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
@@ -62,5 +63,21 @@ public class Main {
         }
         float middle = (float)sum / arr.length;
         System.out.println("Средняя сумма трат за месяц составила " + middle + " рублей");
+    }
+    /**В бухгалтерской книге появился баг. Что-то пошло нет так — фамилии и имена сотрудников начали отображаться
+     * в обратную сторону. Т. е. вместо «Иванов Иван» мы имеем «навИ вонавИ». Данные с именами сотрудников хранятся
+     * в виде массива символов — char[ ].
+     * Напишите код, который в случае такого бага будет выводить фамилии и имена сотрудников в корректном виде.
+     * В качестве данных для массива используйте:
+     * char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+     * В результате в консоль должно быть выведено: Ivanov Ivan.
+     */
+    public static void task4() {
+        System.out.println("Задача 4");
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = 0; i < reverseFullName.length; i++) {
+            int place = reverseFullName.length - i;
+            System.out.print(reverseFullName[place -1]);
+        }
     }
 }
